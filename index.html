@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portail Power BI | Havas CCP</title>
     <style>
-        /* ============================================
+           /* ============================================
            VARIABLES & RESET
            ============================================ */
         :root {
@@ -59,7 +59,7 @@
             padding: 0 24px;
         }
 
-        /* ============================================
+               /* ============================================
            HEADER
            ============================================ */
         .header {
@@ -89,27 +89,27 @@
         }
 
         .logo-icon {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             background: linear-gradient(135deg, var(--color-accent), #0052CC);
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 600;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: -0.5px;
         }
 
         .logo-text {
-            font-size: 18px;
-            font-weight: 600;
-            letter-spacing: -0.3px;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .logo-text span {
-            color: var(--color-text-tertiary);
-            font-weight: 400;
+            color: var(--color-accent);
         }
 
         /* ============================================
@@ -512,8 +512,8 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <div class="logo-icon">PBI</div>
-                    <div class="logo-text">Power BI <span>Portal</span></div>
+                    <div class="logo-icon">HUB</div>
+                    <div class="logo-text">Control <span>HUB</span></div>
                 </a>
 
                 <div class="search-wrapper">
@@ -541,8 +541,12 @@
         <div class="container">
             <!-- Page Header -->
             <div class="page-header">
-                <h1 class="page-title">Tableaux de bord</h1>
-                <p class="page-subtitle">Accédez à tous vos rapports Power BI en un clic</p>
+                <h1 class="page-title">Bienvenue sur Control HUB</h1>
+                <p class="page-subtitle">
+                    Votre portail centralisé pour accéder à tous les rapports Power BI de l'équipe. 
+                    Retrouvez en un clic les tableaux de bord de suivi, d'analyse et de pilotage 
+                    pour CCP, Forward, Ecselis et Havas Programmatic Hub.
+                </p>
             </div>
 
             <!-- Category Filters -->
@@ -553,7 +557,7 @@
             <!-- Stats Bar -->
             <div class="stats-bar">
                 <span class="stats-text" id="statsText">
-                    <strong>0</strong> rapports
+                    <strong>0</strong> rapports disponibles
                 </span>
             </div>
 
@@ -574,9 +578,19 @@
     </main>
 
     <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            Control HUB © 2025 — Havas
+        </div>
+    </footer>
+
+    <!-- ============================================
          JAVASCRIPT
          ============================================ -->
     <script>
+
         /* ============================================
            DONNÉES DES RAPPORTS
            ============================================
@@ -589,105 +603,112 @@
            Exemple : image: "360-solutions.png"
            
         */
-        const reports = [
-            {
-                id: 1,
-                title: "360 SOLUTIONS",
-                category: "CCP",
-                description: "Analyse des litiges déclarés sur Media360.",
-                image: "360-solutions.png",
-                url: "https://app.powerbi.com/links/GNZ0CrLOGw?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 2,
-                title: "INV TRACKER",
-                category: "CCP",
-                description: "Analyse des insertions non validées.",
-                image: "inv-tracker.png",
-                url: "https://app.powerbi.com/links/NQRk3CeEuy?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 3,
-                title: "SPOT CHECK",
-                category: "CCP",
-                description: "Contrôle et vérification des spots.",
-                image: "spot-check.png",
-                url: "https://app.powerbi.com/links/8QWaMPmVc3?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 4,
-                title: "ECSELIS BILLING TRACKER",
-                category: "Ecselis",
-                description: "Suivi de la facturation Ecselis.",
-                image: "ecselis-billing.png",
-                url: "https://app.powerbi.com/links/wJVKUzZO5y?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 5,
-                title: "HMK BILLING CONTROL",
-                category: "Ecselis",
-                description: "Contrôle de facturation HMK.",
-                image: "hmk-billing.png",
-                url: "https://app.powerbi.com/links/iFR6ZF1Qhi?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 6,
-                title: "360 SOLUTIONS by Forward",
-                category: "Forward",
-                description: "Analyse des litiges déclarés sur Media360 sur l'entité Forward.",
-                image: "360-forward.png",
-                url: "https://app.powerbi.com/links/lmAKEZJLzh?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 7,
-                title: "INV TRACKER by Forward",
-                category: "Forward",
-                description: "Analyse des insertions non validées sur l'entité Forward.",
-                image: "inv-forward.png",
-                url: "https://app.powerbi.com/links/ovZwk8Cq1l?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 8,
-                title: "LVMH DASHBOARD & REPORTING",
-                category: "Forward",
-                description: "Tableau de bord et reporting LVMH.",
-                image: "lvmh-dashboard.png",
-                url: "https://app.powerbi.com/links/9t9EkpX0B9?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 9,
-                title: "RADAR HPH",
-                category: "Havas Programmatic Hub",
-                description: "Suivi des actions attendues pour préparer aux mieux la clôture de la régie Havas Programmatic Hub.",
-                image: "radar-hph.png",
-                url: "https://app.powerbi.com/links/pv25JrrxMO?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 10,
-                title: "RADAR HPH : Rate Card",
-                category: "Havas Programmatic Hub",
-                description: "Contrôle de l'application des taux contractuel sur la régie Havas Programmatic Hub.",
-                image: "radar-ratecard.png",
-                url: "https://app.powerbi.com/links/vB0k7HMYP8?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 11,
-                title: "SOCFLOW Suivi factu social",
-                category: "Havas Programmatic Hub",
-                description: "Suivi de la facturation sociale.",
-                image: "socflow.png",
-                url: "https://app.powerbi.com/links/u0I0r3VBNf?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            },
-            {
-                id: 12,
-                title: "BOOK PILOT",
-                category: "Pilot",
-                description: "Tableau de bord Pilot.",
-                image: "book-pilot.png",
-                url: "https://app.powerbi.com/links/5Wi066rhml?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
-            }
-        ];
-
+const reports = [
+    {
+        id: 1,
+        title: "360 SOLUTIONS",
+        category: "CCP",
+        description: "Analyse des litiges déclarés sur Media360.",
+        image: "360-solutions.png",
+        url: "https://app.powerbi.com/links/GNZ0CrLOGw?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
+    },
+    {
+        id: 2,
+        title: "INV TRACKER",
+        category: "CCP",
+        description: "Analyse des insertions non validées.",
+        image: "inv-tracker.png",
+        url: "https://app.powerbi.com/links/NQRk3CeEuy?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
+    },
+    {
+        id: 3,
+        title: "SPOT CHECK",
+        category: "CCP",
+        description: "Contrôle et vérification de la redescente des devis sur SPOT.",
+        image: "spot-check.png",
+        url: "https://app.powerbi.com/links/8QWaMPmVc3?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
+    },
+    {
+        id: 4,
+        title: "ECSELIS BILLING TRACKER",
+        category: "Ecselis",
+        description: "Suivi des actions attendues pour préparer au mieux la clôture de la régie Ecselis",
+        image: "ecselis-billing.png",
+        url: "https://app.powerbi.com/links/wJVKUzZO5y?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
+    },
+    {
+        id: 5,
+        title: "HMK BILLING CONTROL",
+        category: "Ecselis",
+        description: "Contrôle de l'application des taux contractuels sur l'entité Havas Market.",
+        image: "hmk-billing.png",
+        url: "https://app.powerbi.com/links/iFR6ZF1Qhi?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
+    },
+    {
+        id: 6,
+        title: "360 SOLUTIONS by Forward",
+        category: "Forward",
+        description: "Analyse des litiges déclarés sur Media360 sur l'entité Forward.",
+        image: "360-forward.png",
+        url: "https://app.powerbi.com/links/lmAKEZJLzh?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
+    },
+    {
+        id: 7,
+        title: "INV TRACKER by Forward",
+        category: "Forward",
+        description: "Analyse des insertions non validées sur l'entité Forward.",
+        image: "inv-forward.png",
+        url: "https://app.powerbi.com/links/ovZwk8Cq1l?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
+    },
+    {
+        id: 8,
+        title: "LVMH DASHBOARD & REPORTING",
+        category: "Forward",
+        description: "Tableau de bord et reporting LVMH.",
+        image: "lvmh-dashboard.png",
+        url: "https://app.powerbi.com/links/9t9EkpX0B9?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
+    },
+    {
+        id: 9,
+        title: "RADAR HPH",
+        category: "Havas Programmatic Hub",
+        description: "Suivi des actions attendues pour préparer au mieux la clôture de la régie Havas Programmatic Hub.",
+        image: "radar-hph.png",
+        url: "https://app.powerbi.com/links/pv25JrrxMO?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
+    },
+    {
+        id: 10,
+        title: "RADAR HPH : Rate Card",
+        category: "Havas Programmatic Hub",
+        description: "Contrôle de l'application des taux contractuels sur la régie Havas Programmatic Hub.",
+        image: "radar-ratecard.png",
+        url: "https://app.powerbi.com/links/vB0k7HMYP8?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare"
+    },
+    {
+        id: 11,
+        title: "Suivi des PO",
+        category: "CCP",
+        description: "Suivi de l'imputation des bons de commande sur les devis.",
+        image: "suivi-po.png",
+        url: "https://app.powerbi.com/groups/me/reports/99a91245-5548-423c-b1ad-4aff36408708/ReportSection?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&experience=power-bi"
+    },
+    {
+        id: 12,
+        title: "Suivi financier",
+        category: "CCP",
+        description: "Suivi financier des différents clients.",
+        image: "suivi-financier.png",
+        url: "https://app.powerbi.com/groups/me/reports/e1d53d5f-e461-4d87-a07a-d41daba2c7c8/ReportSection?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&experience=power-bi"
+    },
+    {
+        id: 13,
+        title: "BATCH AUTO",
+        category: "CCP",
+        description: "Suivi du workflow sur Media360.",
+        image: "batch-auto.png",
+        url: "https://app.powerbi.com/groups/c1a6f6ea-125c-44a2-87fe-e6fb8be7f9fd/reports/5bbf7196-c3dc-4341-80de-3a0244f9027a/c82d1c9c80264249de09?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&experience=power-bi"
+    }
+];
         // Base URL pour les images GitHub
         const imageBaseUrl = "https://raw.githubusercontent.com/KevinHilaire1/portailpbiccp/main/images/";
 
