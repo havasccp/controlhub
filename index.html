@@ -12,7 +12,7 @@
             --color-bg: #FAFAFA;
             --color-surface: #FFFFFF;
             --color-border: #F0F0F0;
-            --color-border-hover: #E5E5E5;
+            --color-border-hover: #adc5f0;
             --color-text-primary: #1A1A1A;
             --color-text-secondary: #6B6B6B;
             --color-text-tertiary: #9B9B9B;
@@ -248,7 +248,7 @@
            ============================================ */
         .report-card {
             background: var(--color-surface);
-            border: 1px solid var(--color-border);
+            border: 2px solid var(--color-border);
             border-radius: var(--radius-lg);
             overflow: hidden;
             cursor: pointer;
@@ -610,6 +610,22 @@
            ============================================ */
         const reports = [
             {
+                id: 17,
+                title: "Control Center - Accueil",
+                category: "Ressources",
+                description: "Page d'accueil du Control Center.",
+                image: "cc.png",
+                url: "https://havas.sharepoint.com/sites/ControlCenterworkflowetinsightgestion"
+            },
+            {
+                id: 16,
+                title: "Bien facturer son client",
+                category: "Ressources",
+                description: "Formation présentant les bonnes pratiques et les étapes clés pour assurer une facturation client conforme et efficace.",
+                image: "facturer.png",
+                url: "https://havasuniversity.csod.com/ui/lms-learning-details/app/course/53c1f5b2-6d33-435a-abe9-ef21930fe0c6"
+            },
+            {
                 id: 1,
                 title: "360 SOLUTIONS",
                 category: "CCP & GM",
@@ -721,22 +737,7 @@
                 image: "converged-report.png",
                 url: "https://app.powerbi.com/links/HiglPZGM4Y?ctid=c7ed5557-a5c8-4435-9fab-ada7abcdc01b&pbi_source=linkShare&bookmarkGuid=dc649b9d-89c8-44e1-9c7f-0f2a8925b3b3"
             },
-            {
-                id: 16,
-                title: "Bien facturer son client",
-                category: "Ressources",
-                description: "Formation présentant les bonnes pratiques et les étapes clés pour assurer une facturation client conforme et efficace.",
-                image: "facturer.png",
-                url: "https://havasuniversity.csod.com/ui/lms-learning-details/app/course/53c1f5b2-6d33-435a-abe9-ef21930fe0c6"
-            },
-            {
-                id: 17,
-                title: "Control Center - Accueil",
-                category: "Ressources",
-                description: "Page d'accueil du Control Center.",
-                image: "cc.png",
-                url: "https://havas.sharepoint.com/sites/ControlCenterworkflowetinsightgestion"
-            }
+
         ];
 
         // Base URL pour les images GitHub
